@@ -1,5 +1,5 @@
 {
-  "name": "rollup-react-template",
+  "name": "react-library-template-with-rollup",
   "version": "1.0.1",
   "description": "",
   "main": "dist/cjs/index.js",
@@ -8,10 +8,13 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
+  "homepage": "https://nd-yi.github.io/react-library-template-with-rollup",
   "scripts": {
     "rollup": "rollup -c",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "storybook:publish": "npm run build-storybook && touch ./storybook-static/.nojekyll && gh-pages -d ./storybook-static -t true",
     "build-storybook": "storybook build"
   },
   "author": "songyi",
@@ -37,6 +40,7 @@
     "@types/jest": "^29.5.3",
     "@types/react": "^18.2.20",
     "babel-jest": "^29.6.3",
+    "gh-pages": "^6.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.6.3",
     "jest-environment-jsdom": "^29.6.3",
@@ -46,11 +50,16 @@
     "rollup-plugin-dts": "^6.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-postcss-modules": "^2.1.1",
+    "rollup-plugin-sizes": "^1.0.5",
     "storybook": "^7.3.2",
     "tslib": "^2.6.2",
     "typescript": "^5.1.6"
   },
   "peerDependencies": {
     "react": "^18.2.0"
+  },
+  "dependencies": {
+    "vite": "^4.4.9"
   }
 }
